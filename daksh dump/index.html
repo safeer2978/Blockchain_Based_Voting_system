@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel="stylesheet" type="text/css" href="main.css">
+
+    <script src="./node_modules/web3/dist/web3.min.js"></script>
+
+</head>
+<body>
+    <div class="container">
+
+        
+        <label for="name" class="col-lg-2 control-label">Instructor Name</label>
+        <input id="name" type="text">
+
+        <label for="name" class="col-lg-2 control-label">Instructor Age</label>
+        <input id="age" type="text">
+
+        <button id="button">Update Instructor</button>
+
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+
+    <script>
+       if (typeof web3 !== 'undefined') {
+            web3 = new Web3(web3.currentProvider);
+        } else {
+            // set the provider you want from Web3.providers
+            //var Web3 = require('web3');
+        var web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:8545'));
+        }
+        web3.eth.defaultAccount = web3.eth.accounts[0];
+        var ElectioncreationContract = new web3.eth.Contract([
+	{
+		"inputs": [
+			{
+				"internalType": "string[]",
+				"name": "candidateNames",
+				"type": "string[]"
+			},
+			{
+				"internalType": "string",
+				"name": "district",
+				"type": "string"
+			},
+			{
+				"internalType": "address",
+				"name": "creator",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "amountofHours",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "candidates",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "name",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "voteCount",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "creationDate",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "expirationDate",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "index",
+				"type": "uint256"
+			}
+		],
+		"name": "getCandidateName",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "index",
+				"type": "uint256"
+			}
+		],
+		"name": "getVoteCount",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "manager",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "index",
+				"type": "uint256"
+			}
+		],
+		"name": "vote",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "voters",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "votingDistrict",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+],'0x99D68B730560ad897E74610c2F04c2060438d851');
+//var Electioncreation = ElectioncreationContract.at('[0x645258c69943BDCD313678156a61eB5905FB7ee6]');
+    console.log(ElectioncreationContract);
+        var getJSON = function(url, callback) {
+        var xhr = new XMLHttpRequest();
+       xhr.open('GET', url, true);
+       xhr.responseType = 'json';
+       xhr.onload = function() {
+      var status = xhr.status;
+      if (status === 200) {
+        callback(null, xhr.response);
+      } else {
+        callback(status, xhr.response);
+      }
+    };
+    xhr.send();
+};
+getJSON('http://134.209.146.188:3000/customers',
+function(err, data) {
+  if (err !== null) {
+    alert('Something went wrong: ' + err);
+  } else {
+    alert('Your query count: ' + data.query.count);
+  }
+});
+     /*var hours= Endtime-Starttime;
+        $("#button").click(function() {
+            Election.Constructor($("#hours").val());    
+        });*/
+    </script>
+</body> 
+</html> 
