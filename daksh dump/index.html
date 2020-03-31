@@ -29,7 +29,7 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 
     <script>
-       /*if (typeof web3 !== 'undefined') {
+       if (typeof web3 !== 'undefined') {
             web3 = new Web3(web3.currentProvider);
         } else {
             // set the provider you want from Web3.providers
@@ -41,23 +41,23 @@
 	{
 		"inputs": [
 			{
+				"internalType": "string[][]",
+				"name": "candidates",
+				"type": "string[][]"
+			},
+			{
+				"internalType": "string[][]",
+				"name": "party",
+				"type": "string[][]"
+			},
+			{
 				"internalType": "string[]",
-				"name": "candidateNames",
+				"name": "district",
 				"type": "string[]"
 			},
 			{
-				"internalType": "string",
-				"name": "district",
-				"type": "string"
-			},
-			{
-				"internalType": "address",
-				"name": "creator",
-				"type": "address"
-			},
-			{
 				"internalType": "uint256",
-				"name": "amountofHours",
+				"name": "hour",
 				"type": "uint256"
 			}
 		],
@@ -72,73 +72,7 @@
 				"type": "uint256"
 			}
 		],
-		"name": "candidates",
-		"outputs": [
-			{
-				"internalType": "string",
-				"name": "name",
-				"type": "string"
-			},
-			{
-				"internalType": "uint256",
-				"name": "voteCount",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "creationDate",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "expirationDate",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "index",
-				"type": "uint256"
-			}
-		],
-		"name": "getCandidateName",
-		"outputs": [
-			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "index",
-				"type": "uint256"
-			}
-		],
-		"name": "getVoteCount",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "manager",
+		"name": "deployedBallots",
 		"outputs": [
 			{
 				"internalType": "address",
@@ -150,45 +84,13 @@
 		"type": "function"
 	},
 	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "index",
-				"type": "uint256"
-			}
-		],
-		"name": "vote",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"name": "voters",
-		"outputs": [
-			{
-				"internalType": "bool",
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
 		"inputs": [],
-		"name": "votingDistrict",
+		"name": "getsDeployedBallots",
 		"outputs": [
 			{
-				"internalType": "string",
+				"internalType": "address[]",
 				"name": "",
-				"type": "string"
+				"type": "address[]"
 			}
 		],
 		"stateMutability": "view",
@@ -196,7 +98,7 @@
 	}
 ],'0x99D68B730560ad897E74610c2F04c2060438d851');
 //var Electioncreation = ElectioncreationContract.at('[0x645258c69943BDCD313678156a61eB5905FB7ee6]');
-    console.log(ElectioncreationContract);
+    /*console.log(ElectioncreationContract);
         var getJSON = function(url, callback) {
         var xhr = new XMLHttpRequest();
        xhr.open('GET', url, true);
@@ -259,12 +161,9 @@ var candidateDistrict= new Array();
 
 
 // candidateNames consist of array of arrays of Names of candiates of paticular districts!. 
-
-
-//get candidates here
-     var hours= Endtime-Starttime;                       //calculate hours and start the election along with adding candidates
         $("#button").click(function() {
-            Electioncreationcontract.Constructor(candidateNames,candidateParty, candidateDistrict,$("#hours").val());    
+			var hours= $("Endtime").val()-$("Starttime").val();
+            Electioncreationcontract.methods.Constructor(candidateNames,candidateParty,candidateDistrict,hours).send();    
 		});
 		//var ballots= Electioncreationcontract.methods.getDeployedBallots().call();
 		//put post request here to push ballots in database one by one
