@@ -1,0 +1,180 @@
+<html>
+<body>
+//input district form user
+<script>
+    if (typeof web3 !== 'undefined') {
+         web3 = new Web3(web3.currentProvider);
+     } else {
+         // set the provider you want from Web3.providers
+         //var Web3 = require('web3');
+     var web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:8545'));
+     }
+     web3.eth.defaultAccount = web3.eth.accounts[0];
+     var BallotContract = new web3.eth.Contract([
+	{
+		"inputs": [
+			{
+				"internalType": "bytes32[]",
+				"name": "candidateNames",
+				"type": "bytes32[]"
+			},
+			{
+				"internalType": "bytes32",
+				"name": "district",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "address",
+				"name": "creator",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "amountofHours",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "candidates",
+		"outputs": [
+			{
+				"internalType": "bytes32",
+				"name": "name",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "uint256",
+				"name": "voteCount",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "creationDate",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "expirationDate",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "index",
+				"type": "uint256"
+			}
+		],
+		"name": "getCandidateName",
+		"outputs": [
+			{
+				"internalType": "bytes32",
+				"name": "",
+				"type": "bytes32"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "index",
+				"type": "uint256"
+			}
+		],
+		"name": "getVoteCount",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "manager",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "can",
+				"type": "uint256"
+			}
+		],
+		"name": "vote",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "voters",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "votingDistrict",
+		"outputs": [
+			{
+				"internalType": "bytes32",
+				"name": "",
+				"type": "bytes32"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+],'Enter adress here');                       //Get adress of the contract from database
+
+ console.log(BallotContract);
+ $("#button").click(function() {
+            var candidate= BallotContract.methods.getCandidateName().call();
+            var vote= BallotContract.methods.getVoteCount().call();
+
+        }); 
+     </script>
+</body> 
+</html> 
