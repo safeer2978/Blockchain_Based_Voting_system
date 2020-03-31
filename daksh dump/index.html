@@ -219,10 +219,13 @@ function(err, data) {
     alert('Your query count: ' + data.query.count);
   }
 });
-     /*var hours= Endtime-Starttime;
+//get candidates here
+     /*var hours= Endtime-Starttime;                       //calculate hours and start the election along with adding candidates
         $("#button").click(function() {
-            Election.Constructor($("#hours").val());    
-        });*/
+            Electioncreationcontract.Constructor($("#hours").val());    
+		});*/
+		var ballots= Electioncreationcontract.getDeployedBallots();
+		//put post request here to push ballots in database one by one
     </script>
 </body> 
 </html> 
