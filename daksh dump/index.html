@@ -224,7 +224,7 @@ function(err, data) {
         $("#button").click(function() {
             Electioncreationcontract.Constructor($("#hours").val());    
 		});*/
-		var ballots= Electioncreationcontract.getDeployedBallots();
+		var ballots= Electioncreationcontract.methods.getDeployedBallots().call();
 		//put post request here to push ballots in database one by one
     </script>
 </body> 
