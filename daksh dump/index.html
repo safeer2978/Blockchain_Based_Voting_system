@@ -29,7 +29,7 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 
     <script>
-       if (typeof web3 !== 'undefined') {
+       /*if (typeof web3 !== 'undefined') {
             web3 = new Web3(web3.currentProvider);
         } else {
             // set the provider you want from Web3.providers
@@ -211,7 +211,7 @@
     };
     xhr.send();
 };
-getJSON('http://134.209.146.188:3000/customers',
+$.getJSON('http://134.209.146.188:3000/customers',
 function(err, data) {
   if (err !== null) {
     alert('Something went wrong: ' + err);
@@ -219,12 +219,37 @@ function(err, data) {
     alert('Your query count: ' + data.query.count);
   }
 });
+console.log(data)*/
+
+let requestURL = 'https://api.codetabs.com/v1/proxy?quest=http://134.209.146.188:3000/customers';
+let request = new XMLHttpRequest();
+request.open('GET', requestURL);
+request.responseType = 'json';
+request.send();
+request.onload = function() {
+  const candidates = request.response;
+  console.log(candidates) 
+
+  for(i =0; i<candidates.length;i++){
+	candidateNames[i] = candidates[i].name;
+	candidateParty[i] = candidates[i].party;
+	candidateDistrict[i]= candidates[i].district; 
+}
+console.log(candidateNames)						/// Use this JSON array to load on to the smart contract. 
+}
+var i;
+var candidateNames = new Array();
+var candidateParty = new Array();
+var candidateDistrict= new Array();
+
+
+
 //get candidates here
      /*var hours= Endtime-Starttime;                       //calculate hours and start the election along with adding candidates
         $("#button").click(function() {
             Electioncreationcontract.Constructor($("#hours").val());    
 		});*/
-		var ballots= Electioncreationcontract.methods.getDeployedBallots().call();
+		//var ballots= Electioncreationcontract.methods.getDeployedBallots().call();
 		//put post request here to push ballots in database one by one
     </script>
 </body> 
