@@ -228,27 +228,44 @@ request.responseType = 'json';
 request.send();
 request.onload = function() {
   const candidates = request.response;
-  console.log(candidates) 
-
+  console.log(candidates) /// Use this JSON array to load on to the smart contract. 
+var o=-1;
   for(i =0; i<candidates.length;i++){
-	candidateNames[i] = candidates[i].name;
-	candidateParty[i] = candidates[i].party;
-	candidateDistrict[i]= candidates[i].district; 
+  	if((candidateDistrict.indexOf(candidates[i].district) == -1)){
+  		candidateDistrict.push(candidates[i].district)
+  		o+=1;
+  		candidateParty[o]=[]
+		candidateNames[o] = []}
+  	
+
+  	candidateNames[o].push(candidates[i].name)
+  	
+  	candidateParty[o].push(candidates[i].party)
+	//candidateNames[i] = candidates[i].name;
+	//candidateParty[i] = candidates[i].party;
+	//candidateDistrict[i]= candidates[i].district; 
 }
-console.log(candidateNames)						/// Use this JSON array to load on to the smart contract. 
+//console.log(candidateNames)
+//for(i=0;i<candidateNames.length;i++)
+	console.log(candidateNames[1][0])
+
+console.log(candidateDistrict)
+//console.log(candidateParty)
 }
 var i;
-var candidateNames = new Array();
+var candidateNames = []
 var candidateParty = new Array();
 var candidateDistrict= new Array();
 
 
+// candidateNames consist of array of arrays of Names of candiates of paticular districts!. 
+
 
 //get candidates here
-     /*var hours= Endtime-Starttime;                       //calculate hours and start the election along with adding candidates
+     var hours= Endtime-Starttime;                       //calculate hours and start the election along with adding candidates
         $("#button").click(function() {
-            Electioncreationcontract.Constructor($("#hours").val());    
-		});*/
+            Electioncreationcontract.Constructor(candidateNames,candidateParty, candidateDistrict,$("#hours").val());    
+		});
 		//var ballots= Electioncreationcontract.methods.getDeployedBallots().call();
 		//put post request here to push ballots in database one by one
     </script>
