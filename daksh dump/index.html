@@ -29,6 +29,7 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 
     <script>
+       if (typeof web3 !== 'undefined') {
             web3 = new Web3(web3.currentProvider);
         } else {
             // set the provider you want from Web3.providers
@@ -40,13 +41,23 @@
 	{
 		"inputs": [
 			{
+				"internalType": "string[][]",
+				"name": "candidates",
+				"type": "string[][]"
 			},
 			{
+				"internalType": "string[][]",
+				"name": "party",
+				"type": "string[][]"
 			},
 			{
+				"internalType": "string[]",
+				"name": "district",
+				"type": "string[]"
 			},
 			{
 				"internalType": "uint256",
+				"name": "hour",
 				"type": "uint256"
 			}
 		],
@@ -61,6 +72,7 @@
 				"type": "uint256"
 			}
 		],
+		"name": "deployedBallots",
 		"outputs": [
 			{
 				"internalType": "address",
@@ -73,9 +85,12 @@
 	},
 	{
 		"inputs": [],
+		"name": "getsDeployedBallots",
 		"outputs": [
 			{
+				"internalType": "address[]",
 				"name": "",
+				"type": "address[]"
 			}
 		],
 		"stateMutability": "view",
@@ -83,6 +98,7 @@
 	}
 ],'0x99D68B730560ad897E74610c2F04c2060438d851');
 //var Electioncreation = ElectioncreationContract.at('[0x645258c69943BDCD313678156a61eB5905FB7ee6]');
+    /*console.log(ElectioncreationContract);
         var getJSON = function(url, callback) {
         var xhr = new XMLHttpRequest();
        xhr.open('GET', url, true);
@@ -139,6 +155,7 @@ console.log(candidateDistrict)
 console.log(candidateParty)
 
 
+<<<<<<< HEAD
 
 // candidateNames consist of array of arrays of Names of candiates of paticular districts!. 
 /*
@@ -148,6 +165,13 @@ console.log(candidateParty)
         $("#button").click(function() {
             Electioncreationcontract.Constructor(candidateNames,candidateParty, candidateDistrict,$("#hours").val());    
 		});*/
+=======
+// candidateNames consist of array of arrays of Names of candiates of paticular districts!. 
+        $("#button").click(function() {
+			var hours= $("Endtime").val()-$("Starttime").val();
+            Electioncreationcontract.methods.Constructor(candidateNames,candidateParty,candidateDistrict,hours).send();    
+		});
+>>>>>>> 69ca19805c6b9b90a2dca6bedeef79490f823e4b
 		//var ballots= Electioncreationcontract.methods.getDeployedBallots().call();
 		//put post request here to push ballots in database one by one
 
