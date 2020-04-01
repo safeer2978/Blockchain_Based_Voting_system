@@ -29,7 +29,6 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 
     <script>
-       /*if (typeof web3 !== 'undefined') {
             web3 = new Web3(web3.currentProvider);
         } else {
             // set the provider you want from Web3.providers
@@ -41,23 +40,13 @@
 	{
 		"inputs": [
 			{
-				"internalType": "string[]",
-				"name": "candidateNames",
-				"type": "string[]"
 			},
 			{
-				"internalType": "string",
-				"name": "district",
-				"type": "string"
 			},
 			{
-				"internalType": "address",
-				"name": "creator",
-				"type": "address"
 			},
 			{
 				"internalType": "uint256",
-				"name": "amountofHours",
 				"type": "uint256"
 			}
 		],
@@ -72,73 +61,6 @@
 				"type": "uint256"
 			}
 		],
-		"name": "candidates",
-		"outputs": [
-			{
-				"internalType": "string",
-				"name": "name",
-				"type": "string"
-			},
-			{
-				"internalType": "uint256",
-				"name": "voteCount",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "creationDate",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "expirationDate",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "index",
-				"type": "uint256"
-			}
-		],
-		"name": "getCandidateName",
-		"outputs": [
-			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "index",
-				"type": "uint256"
-			}
-		],
-		"name": "getVoteCount",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "manager",
 		"outputs": [
 			{
 				"internalType": "address",
@@ -150,45 +72,10 @@
 		"type": "function"
 	},
 	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "index",
-				"type": "uint256"
-			}
-		],
-		"name": "vote",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"name": "voters",
-		"outputs": [
-			{
-				"internalType": "bool",
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
 		"inputs": [],
-		"name": "votingDistrict",
 		"outputs": [
 			{
-				"internalType": "string",
 				"name": "",
-				"type": "string"
 			}
 		],
 		"stateMutability": "view",
@@ -196,7 +83,6 @@
 	}
 ],'0x99D68B730560ad897E74610c2F04c2060438d851');
 //var Electioncreation = ElectioncreationContract.at('[0x645258c69943BDCD313678156a61eB5905FB7ee6]');
-    console.log(ElectioncreationContract);
         var getJSON = function(url, callback) {
         var xhr = new XMLHttpRequest();
        xhr.open('GET', url, true);
