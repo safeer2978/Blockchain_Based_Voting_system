@@ -245,29 +245,62 @@ var o=-1;
 	//candidateParty[i] = candidates[i].party;
 	//candidateDistrict[i]= candidates[i].district; 
 }
-//console.log(candidateNames)
+console.log(candidateNames)
 //for(i=0;i<candidateNames.length;i++)
-	console.log(candidateNames[1][0])
+	//console.log(candidateNames[1][0])
 
 console.log(candidateDistrict)
-//console.log(candidateParty)
+console.log(candidateParty)
+
+
+
+// candidateNames consist of array of arrays of Names of candiates of paticular districts!. 
+/*
+
+//get candidates here
+     var hours= Endtime-Starttime;                       //calculate hours and start the election along with adding candidates
+        $("#button").click(function() {
+            Electioncreationcontract.Constructor(candidateNames,candidateParty, candidateDistrict,$("#hours").val());    
+		});*/
+		//var ballots= Electioncreationcontract.methods.getDeployedBallots().call();
+		//put post request here to push ballots in database one by one
+
+		//assuming ballots to be an array of addresses.
+	var ballots=["123","456","678"] //comment this out, only for temporary use.
+	var jsonToPush=[]
+	
+	for(i=0;i<ballots.length;i++){
+		var jsonObject={}
+		jsonObject["district"]=candidateDistrict[i]
+		jsonObject["address"]=ballots[i]
+		console.log(jsonObject)
+		jsonToPush.push(jsonObject)
+		}
+	console.log(JSON.stringify(jsonToPush))
+	let xhr = new XMLHttpRequest(); 
+    let url_post = "http://134.209.146.188:3000/contracts"; 
+        
+            // open a connection 
+
+    //xhr.setRequestHeader("Origin", 'maximum.blog');
+    //for(i=0;i<jsonToPush.length;i++){
+
+    xhr.open("POST", url_post, true);
+    //xhr.setRequestHeader("Origin", 'maximum.blog');
+    xhr.setRequestHeader("Content-Type", "application/json"); 
+
+  	
+  		xhr.send(JSON.stringify(jsonToPush)); 	
+  		console.log("Sent address")
+  	//}
+
+
 }
 var i;
 var candidateNames = []
 var candidateParty = new Array();
 var candidateDistrict= new Array();
 
-
-// candidateNames consist of array of arrays of Names of candiates of paticular districts!. 
-
-
-//get candidates here
-     var hours= Endtime-Starttime;                       //calculate hours and start the election along with adding candidates
-        $("#button").click(function() {
-            Electioncreationcontract.Constructor(candidateNames,candidateParty, candidateDistrict,$("#hours").val());    
-		});
-		//var ballots= Electioncreationcontract.methods.getDeployedBallots().call();
-		//put post request here to push ballots in database one by one
     </script>
 </body> 
 </html> 

@@ -9,17 +9,20 @@ exports.create = (req, res) => {
     });
   }
 
+  contracts =[]
+  for(i=0;i<req.body.length;i++){
   // Create a Contract
   const customer = new Contract({
    // email: req.body.email,
     //name: req.body.name,
-    address: req.body.address,
-    district: req.body.district
+    address: req.body[i].address,
+    district: req.body[i].district
     //active: req.body.active
   });
-
+  contracts.push(customer)
+}
   // Save  in the database
-  Contract.create(customer, (err, data) => {
+  Contract.create(contracts, (err, data) => {
     if (err)
       res.status(500).send({
         message:

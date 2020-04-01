@@ -1,5 +1,5 @@
 const sql = require("./db.js");
-
+var async = require('async');
 // constructor
 const Contract = function(contract) {
   //this.email = contract.email;
@@ -13,16 +13,35 @@ const Contract = function(contract) {
 };
 
 Contract.create = (newContract, result) => {
-  sql.query("INSERT INTO contracts SET ?", newContract, (err, res) => {
+/*
+async function asyncForEach(newContract, callback) {
+  for (let index = 0; index < newContract.length; index++) {
+      sql.query("INSERT INTO contracts SET ?",newContract[index], (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(err, null);
       return;
     }
 
-    console.log("created contract: ", { id: res.insertId, ...newContract });
-    result(null, { id: res.insertId, ...newContract });
+    console.log("created contract: ", { id: res.insertId, ...newContract[index]});
+    result(null, {"message":"SUCCESS" });
   });
+       await callback(newContract[index], index, newContract);
+  }
+}*/
+function save_row_to_db (post, callback) {
+    sql.query('INSERT INTO contracts SET ?', post, callback);
+}
+
+function finished(err) {
+    if (err) throw err;
+    result(null, {"message":"SUCCESS" });
+}
+
+async.eachLimit(newContract, newContract.length, save_row_to_db, finished);
+
+
+
 };
 
 Contract.findById = (district, result) => {
