@@ -4,7 +4,7 @@ pragma experimental ABIEncoderV2;
 
 contract Electioncreation {
     address[] public deployedBallots;
-    constructor (string[][] memory candidates,string[][] memory party, string[] memory district , uint hour) public {
+    function startelec (string[][] memory candidates,string[][] memory party, string[] memory district , uint hour) public {
         
         for(uint i =0;i<district.length;i++)
             {
