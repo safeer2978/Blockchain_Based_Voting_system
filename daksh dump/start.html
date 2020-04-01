@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" >
+	<head>
+		<meta http-equiv="content-type" content="text/html" charset="utf-8" />
+		<title>start_election</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="" >
+		<link rel="StyleSheet" href="start_election.css" />
+		<script src="https://secure.exportkit.com/cdn/js/ek_googlefonts.js"></script>
+         <script src="./node_modules/web3/dist/web3.min.js"></script>
+        </head>
+<body>
+		<div id="content-container" >
+			<div id="_bg__start_election"  ></div>
+			<div id="election_" >
+				Election:
+			</div>
+			
+			<div id="select_start_time__" >
+			Enter no. of hours:
+			</div>
+			</div>
+			<form>
+			<div id="starttim"><input type="text"></div>
+			</form>
+			<div id="back" ><button class="button button1">Back</button>
+				
+			</div>
+
+			<div id="group_2"  ><button class="button button2"type="Submit">Confirm</button>
+			</div>
+
+		</div>
+		 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+		<script>
+       if (typeof web3 !== 'undefined') {
+            web3 = new Web3(web3.currentProvider);
+        } else {
+            // set the provider you want from Web3.providers
+            //var Web3 = require('web3');
+        var web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:8545'));
+        }
+        web3.eth.defaultAccount = web3.eth.accounts[0];
+        var Electioncreationcontract = new web3.eth.Contract([
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "deployedBallots",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getsDeployedBallots",
+		"outputs": [
+			{
+				"internalType": "address[]",
+				"name": "",
+				"type": "address[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string[][]",
+				"name": "candidates",
+				"type": "string[][]"
+			},
+			{
+				"internalType": "string[][]",
+				"name": "party",
+				"type": "string[][]"
+			},
+			{
+				"internalType": "string[]",
+				"name": "district",
+				"type": "string[]"
+			},
+			{
+				"internalType": "uint256",
+				"name": "hour",
+				"type": "uint256"
+			}
+		],
+		"name": "startelec",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	}
+],'0x99D68B730560ad897E74610c2F04c2060438d851');
+    console.log(Electioncreationcontract);
+    let requestURL = 'https://api.codetabs.com/v1/proxy?quest=http://134.209.146.188:3000/customers';
+let request = new XMLHttpRequest();
+request.open('GET', requestURL);
+request.responseType = 'json';
+request.send();
+request.onload = function() {
+  const candidates = request.response;
+  console.log(candidates) /// Use this JSON array to load on to the smart contract. 
+var o=-1;
+  for(i =0; i<candidates.length;i++){
+  	if((candidateDistrict.indexOf(candidates[i].district) == -1)){
+  		candidateDistrict.push(candidates[i].district)
+  		o+=1;
+  		candidateParty[o]=[]
+		candidateNames[o] = []}
+  	
+
+  	candidateNames[o].push(candidates[i].name)
+  	
+  	candidateParty[o].push(candidates[i].party)
+	//candidateNames[i] = candidates[i].name;
+	//candidateParty[i] = candidates[i].party;
+	//candidateDistrict[i]= candidates[i].district; 
+}
+console.log(candidateNames)
+//for(i=0;i<candidateNames.length;i++)
+	//console.log(candidateNames[1][0])
+
+console.log(candidateDistrict)
+console.log(candidateParty)
+
+$("#group_2").click(function() {
+			var hours= $("#starttim").val();
+            Electioncreationcontract.methods.startelec(candidateNames,candidateParty,candidateDistrict,hours).send();    
+		});    
+		var ballots= Electioncreationcontract.methods.getsDeployedBallots().call();
+		
+		//assuming ballots to be an array of addresses.
+	//var ballots=["123","456","678"] //comment this out, only for temporary use.
+	var jsonToPush=[]
+	
+	for(i=0;i<ballots.length;i++){
+		var jsonObject={}
+		jsonObject["district"]=candidateDistrict[i]
+		jsonObject["address"]=ballots[i]
+		console.log(jsonObject)
+		jsonToPush.push(jsonObject)
+		}
+	console.log(JSON.stringify(jsonToPush))
+	let xhr = new XMLHttpRequest(); 
+    let url_post = "http://134.209.146.188:3000/contracts"; 
+        
+            // open a connection 
+
+    //xhr.setRequestHeader("Origin", 'maximum.blog');
+    //for(i=0;i<jsonToPush.length;i++){
+
+    xhr.open("POST", url_post, true);
+    //xhr.setRequestHeader("Origin", 'maximum.blog');
+    xhr.setRequestHeader("Content-Type", "application/json"); 
+
+  	
+  		xhr.send(JSON.stringify(jsonToPush)); 	
+  		console.log("Sent address")
+  	//}
+
+
+}
+var i;
+var candidateNames = []
+var candidateParty = new Array();
+var candidateDistrict= new Array();
+
+    </script>
+</body> 
+</html> 
+	
+		
