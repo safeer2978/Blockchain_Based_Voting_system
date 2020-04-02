@@ -171,9 +171,8 @@
 
  console.log(BallotContract);
  $("#button").click(function() {
-            var candidate= BallotContract.methods.getCandidateName().call();
-            var vote= BallotContract.methods.getVoteCount().call();
-
+            var candidate= BallotContract.methods.getCandidateName(Enter index here).call();
+            var vote= BallotContract.methods.getVoteCount(get index here).call();
         }); 
 		//display candidate and his vote data here
      </script>
