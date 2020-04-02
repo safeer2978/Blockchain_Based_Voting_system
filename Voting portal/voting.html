@@ -1,15 +1,18 @@
 <html>
 <head>
-  <title>Hello World DApp</title>
+  <title>Candidates</title>
   <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
 </head>
+<script src="./node_modules/web3/dist/web3.min.js"></script>
+<script src="./index.js"></script>
 <body class="container">
-  <h1>A Simple Hello World Voting Application</h1>
+  <h1>Main Election Page</h1>
   <div class="table-responsive">
     <table class="table table-bordered">
       <thead>
         <tr>
           <th>Candidate</th>
+          <th>Party</th>
           <th>Votes</th>
         </tr>
       </thead>
@@ -18,10 +21,11 @@
     </table>
   </div>
   <form id="vote-form">
-    <select id="candidate-options" name="candidate"></select>
-    <button type="submit" class="btn btn-primary">Vote</button>
+    <div id="choose_candidate_">
+      Choose Candidate:
+    </div>
+    <select style="height:50px;width:150px" id="candidate-options" name="candidate"></select>
+    <button type="submit" class="btn btn-primary"style="height:50px;width:150px">Vote</button>
   </form>
 </body>
-<script src="https://cdn.rawgit.com/ethereum/web3.js/develop/dist/web3.js"></script>
-<script src="./index.js"></script>
 </html>
