@@ -1,0 +1,83 @@
+<!-- 
+/*
+ *	This content is generated from the PSD File Info.
+ *	(Alt+Shift+Ctrl+I).
+ *
+ *	@desc 		
+ *	@file 		first_page
+ *	@date 		0
+ *	@title 		First Page
+ *	@author 	
+ *	@keywords 	
+ *	@generator 	Export Kit v1.2.9.xd
+ *
+*/
+ -->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" >
+	<head>
+		<meta http-equiv="content-type" content="text/html" charset="utf-8" />
+		<title>first_page</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="" >
+		<link rel="StyleSheet" href="first_page.css" />
+		<script src="https://secure.exportkit.com/cdn/js/ek_googlefonts.js"></script>
+		<!-- Add your custom HEAD content here -->
+
+	</head>
+	<body>
+		<div id="content-container" >
+			<div id="page_first_page_ek1"  >
+				<div id="_bg__first_page_ek2"  ></div>
+				<div id="welcome_to_e_voting" >
+					Welcome To E-Voting
+				</div>
+				<div id="enter_your_card_number_" >
+					Enter Your Card Number:
+				</div>
+				<form>
+					<div id="card_number_input"><input type="text"></div>
+				</form>
+
+				<div id="group_19"  >
+					<button type="Submit">Confirm</button>
+
+				</div>
+				<div id="____________________________" >
+					<br/><span class="char">%E0%A4%85%E0%A4%AA%E0%A4%A8%E0%A4%BE </span> <span class="char">%E0%A4%95%E0%A4%BE%E0%A4%B0%E0%A5%8D%E0%A4%A1 </span> <span class="char">%E0%A4%A8%E0%A4%82%E0%A4%AC%E0%A4%B0 </span> <span class="char">%E0%A4%A6%E0%A4%B0%E0%A5%8D%E0%A4%9C </span> <span class="char">%E0%A4%95%E0%A4%B0%E0%A5%87%E0%A4%82:</span>:
+				</div>
+				<div id="_____________________________1" >
+					<span class="char">%E0%A4%88 </span> <span class="char">%E0%A4%B5%E0%A5%8B%E0%A4%9F%E0%A4%BF%E0%A4%82%E0%A4%97 </span> <span class="char">%E0%A4%AE%E0%A5%87%E0%A4%82 </span> <span class="char">%E0%A4%86%E0%A4%AA%E0%A4%95%E0%A4%BE </span> <span class="char">%E0%A4%B8%E0%A5%8D%E0%A4%B5%E0%A4%BE%E0%A4%97%E0%A4%A4 </span> <span class="char">%E0%A4%B9%E0%A5%88</span>
+				</div>
+
+			</div>
+
+
+
+
+			<div id="group_1"  >
+				<div id="rectangle_1"  ></div>
+				<div id="rectangle_2"  ></div>
+				<div id="rectangle_3"  ></div>
+				<div id="rectangle_4"  ></div>
+				<div id="rectangle_5"  ></div>
+
+			</div>
+
+		</div>
+		<script>var specialChars = document.querySelectorAll("span.char"); for(var c=0; c<specialChars.length; c++){ specialChars[c].innerHTML = decodeURIComponent(specialChars[c].innerHTML); }
+
+		const toSend = {
+				hash :  "uxdsbhad",
+				district:"lavale"
+			};
+
+		const jsonString = JSON.stringify(toSend);
+		const xhr = new XMLHttpRequest();
+
+		xhr.open("POST",  "http://134.209.146.188:3000/voters");
+			xhr.setRequestHeader("Content-Type", "application/json");
+			xhr.send(jsonString);
+	</script>
+	</body>
+</html>
