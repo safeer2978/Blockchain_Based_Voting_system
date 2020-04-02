@@ -1,0 +1,206 @@
+/*
+	@name start_election
+*/
+/* Only edit this if you know what you are doing! */
+body { margin: 0px; padding: 0px; font-family:"Arial"; /*overflow-x:hidden;*/ }
+
+/* Only edit this if you know what you are doing! */
+img { position: absolute; display: block; margin: 0px; border: none; padding: 0px; }
+
+/* Only edit this if you know what you are doing! */
+div { position: absolute; }
+
+#content-container { display: table; position: relative; width: 1920px; height: 1080px; margin-left: auto; margin-right: auto;  }
+
+#_bg__start_election {
+	top: 0px;
+	left: 0px;
+	width: 1920px;
+	height: 1080px;
+	background:rgba(214,214,214,255);
+}
+
+
+#election_ {
+	top: 98px;
+	left: 125px;
+	width: 778px;
+	height: 219px;
+	overflow: hidden;
+	font-family: Bookman Old Style;
+	font-size: 120px;
+	text-align: left;
+	line-height: 120px;
+	color:#2a3439;
+}
+
+
+#select_start_time__ {
+	top: 425px;
+	left: 125px;
+	width: 556px;
+	height: 128px;
+	overflow: hidden;
+	font-family: Bookman Old Style;
+	font-size: 60px;
+	text-align: left;
+	line-height: 60px;
+	color:#2a3439;
+}
+input[type="text"]
+{
+	top: 350px;
+	left: 771px;
+	width: 729px;
+	height: 80px;
+	overflow: hidden;
+	font-family: Bookman Old Style;
+	font-size: 60px;
+	text-align: left;
+	line-height: 60px;
+	padding: 30px;
+	color:#2a3439;
+	-ms-border-radius: 32px;
+	-o-border-radius: 32px;
+	-moz-border-radius: 32px;
+	-webkit-border-radius: 32px;
+	border-radius: 32px;
+}
+
+#select_end_time__ {
+	top: 600px;
+	left: 125px;
+	width: 556px;
+	height: 128px;
+	overflow: hidden;
+	font-family: Bookman Old Style;
+	font-size: 60px;
+	text-align: left;
+	line-height: 60px;
+	color:#2a3439;
+}
+
+
+#starttim {
+	top: 383px;
+	left: 771px;
+	width: 729px;
+	height: 80px;
+	-ms-border-radius: 32px;
+	-o-border-radius: 32px;
+	-moz-border-radius: 32px;
+	-webkit-border-radius: 32px;
+	border-radius: 32px;
+	border: 0px solid #707070;
+
+}
+
+
+#endtime {
+	top: 561px;
+	left: 771px;
+	width: 729px;
+	height: 80px;
+	-ms-border-radius: 32px;
+	-o-border-radius: 32px;
+	-moz-border-radius: 32px;
+	-webkit-border-radius: 32px;
+	border-radius: 32px;
+	border: 0px solid #707070;
+
+}
+
+
+#back {
+	top: 71px;
+	left: 1656px;
+	width: 237px;
+	height: 110px;
+	overflow: hidden;
+	font-family: Bookman Old Style;
+	font-size: 60px;
+	text-align: left;
+	line-height: 60px;
+	color:#2a3439;
+}
+.button
+{
+	border: none;
+	background-color: inherit;
+	padding:14px 28px;
+	font-size: 60px;
+	cursor: pointer;
+	display: inline-block;
+}
+.button2
+{
+  background-color: #3D9E74;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family: Bookman Old Style;
+  font-size: 45px;
+  margin: 4px 2px;
+  cursor: pointer;
+  width: 438px;
+	height: 114px;
+	-ms-border-radius: 53px;
+	-o-border-radius: 53px;
+	-moz-border-radius: 53px;
+	-webkit-border-radius: 53px;
+	border-radius: 53px;
+	border: 1px solid #707070;
+}
+.button1
+{
+	top: 71px;
+	left: 1656px;
+	width: 237px;
+	height: 68px;
+	border: none;
+	color: #2A3439;
+	font-family: Bookman Old Style;
+  font-size: 45px;
+  
+}
+#group_2 {
+	top: 793px;
+	left: 740px;
+	width: 440px;
+	height: 116px;
+}
+
+#rectangle_10 {
+	top: 0px;
+	left: 0px;
+	width: 438px;
+	height: 114px;
+	-ms-border-radius: 53px;
+	-o-border-radius: 53px;
+	-moz-border-radius: 53px;
+	-webkit-border-radius: 53px;
+	border-radius: 53px;
+	border: 1px solid #707070;
+	background:rgba(61,158,116,255);
+}
+
+
+#confirm {
+	top: 25px;
+	left: 97px;
+	width: 274px;
+	height: 105px;
+	overflow: hidden;
+	font-family: Bookman Old Style;
+	font-size: 60px;
+	text-align: left;
+	line-height: 60px;
+	color:#f5f5f5;
+}
+
+
+
+/* Add your custom CSS here */
