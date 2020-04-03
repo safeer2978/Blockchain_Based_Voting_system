@@ -1,17 +1,30 @@
 <html>
 <head>
   <title>Candidates</title>
-  <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+  <link href="monitor.css" rel='stylesheet' type='text/css'>
 </head>
 <script src="./node_modules/web3/dist/web3.min.js"></script>
+<style>
+  select
+  {
+  padding-top: 400px;
 
+    width: 20%;
+    padding: 10px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid black;
+    border-radius: 4px;
+  }
+</style>
 <body class="container">
-  <button onclick="onBack()">Return to home</button>
+  <button onclick="onBack()">back</button>
   <div><h1>Monitor Election</h1> 
-    <div><h4>Select District: </h4><select id="selectDistrict" onchange="onSelect(this)"> </select><button onclick="getCandidateData()"class="btn btn-primary"style="height:25px;width:80px">refresh</button></div>
+    <div><h4>Select District: <div id="districtbox"><select id="selectDistrict" onchange="onSelect(this)"></select></div></h4></div>
   </div>
+  
   <div class="table-responsive">
-    <table class="table table-bordered" id = "table">
+    <table class="table table-bordered" id = "table" align="center">
       <thead>
         <tr>
           <th>Index</th>
@@ -164,9 +177,10 @@
   
     }   
 
-    function onBack(){
-      window.open("../home/home.html","_self")
-    }
+function onBack(){
+  window.open("../home/home.html","_self")
+}
+
   </script>
 
 

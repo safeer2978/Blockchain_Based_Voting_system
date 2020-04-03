@@ -1,0 +1,73 @@
+body
+{
+	background-color: #D6D6D6;
+}
+a
+{
+	padding-top: 50px;
+	padding-left: 50px;
+}
+h1
+{
+	font-size: 60px;
+	font-family: Times New Roman;
+	font-style: normal;
+	text-align: center;
+}
+h4
+{
+	padding-left: 350px;
+	font-family: Times New Roman;
+	font-size: 35px;
+
+}
+table,td,th
+{
+	align-self: center;
+	border: 1px solid black;
+	text-align: left;
+}
+table
+{
+	align-content: center;
+	border-collapse: collapse;
+	width:70%;
+}
+th
+{
+	padding: 15px;
+	font-size: 30px;
+	font-family: Times New Roman;
+	font-style: bold;
+}
+td
+{
+	padding: 15px;
+	font-family: Times New Roman;
+	font-size: 25px;
+	font-style: normal;
+}
+#select {
+	width: 243px;
+	height: 69px;
+	border-radius: 30px;
+	border: 1px solid #707070;
+	background:rgba(61,158,116,255);
+}
+#districtbox
+{
+	padding-bottom:50px;
+	top: 500px;
+	right:500px;
+	height: 100px;
+	width: 500px;
+}
+#selectDistrict
+{
+
+	top:500px;
+	left:500px;
+	height: 100px;
+	width: 500px;
+
+}
