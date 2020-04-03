@@ -40,11 +40,11 @@ exports.findOne = (req, res) => {
     if (err) {
       if (err.kind === "not_found") {
         res.status(404).send({
-          message: `Not found Voter with hash ${req.params.hash}.`
+          message: `Not found Voter with hash ${req.body.hash}.`
         });
       } else {
         res.status(500).send({
-          message: "Error retrieving Customer with id " + req.params.customerId
+          message: "Error retrieving Voter with id " + req.body.hash
         });
       }
     } else res.send(data);

@@ -25,7 +25,7 @@ Voter.create = (newVoter, result) => {
 };
 
 Voter.findById = (hash, result) => {
-  sql.query(`SELECT * FROM Voters WHERE hash = ${hash}`, (err, res) => {
+  sql.query("SELECT * FROM Voters WHERE `hash` = ?",hash, (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(err, null);
@@ -46,7 +46,7 @@ Voter.findById = (hash, result) => {
 
 Voter.voteAuth = (hash, result) => {
   sql.query(
-    "UPDATE Voters SET  vote = ? WHERE hash = ?",
+    "UPDATE Voters SET  vote = ? WHERE `hash` = ?",
     [1, hash],
     (err, res) => {
       if (err) {
@@ -60,7 +60,7 @@ Voter.voteAuth = (hash, result) => {
         result({ kind: "not_found" }, null);
         return;
       }
-      sql.query(`SELECT * FROM Voters WHERE hash = ${hash}`, (err, res) => {
+      sql.query("SELECT * FROM Voters WHERE `hash` = ?",hash, (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(err, null);
@@ -69,7 +69,7 @@ Voter.voteAuth = (hash, result) => {
 
     if (res.length) {
       console.log("found Voter: ", res[0]);
-      result(null, res[0]);
+      result(null, {"message":"SUCCESS"});
       return;
     }
 
