@@ -1,0 +1,93 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html" charset="utf-8" />
+		<title>voter</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="" >
+		<link rel="StyleSheet" href="voter.css" />
+		<script src="https://secure.exportkit.com/cdn/js/ek_googlefonts.js"></script>
+		<!-- Add your custom HEAD content here -->
+
+	</head>
+	<body>
+		<div id="content-container" >
+			<div id="_bg__voter"  ></div>
+			<div id="add_voter_" >
+				Add Voter :
+			</div>
+
+			<div id="enter_voter_id_" >
+				Enter Voter ID :
+			</div>
+			<div id="enter_aadhar_number_" >
+				Enter Aadhar Number :
+			</div>
+			<div id="District">
+				Enter District :
+			</div>
+			<form>
+				<div id="districtbox">
+					<select id = "selectDistrict">
+						<option value="Select1">Select District</option>
+						<option value="Kolhapur">Kolhapur</option>
+						<option value="Mumbai">Mumbai</option>
+						<option value="Nashik">Nashik</option>
+						<option value="Nagpur">Nagpur</option>
+						<option value="Pune">Pune</option>
+						<option value="Raigad">Raigad</option>
+						<option value="Ratnagiri">Ratnagiri</option>
+						<option value="Satara">Satara</option>
+						<option value="Solapur">Solapur</option>
+						<option value="Thane">Thane</option>
+					</select>
+				</div>
+				<div id="voteridbox"><input id = "voterid" type="text"></div>
+				<div id="aadharnumber"><input id  = "aadhar" type="text"></div>
+				
+				<div id="group_3"  ><button class="button button2" onclick = "func()" type = "button">Confirm</button>
+					</div>
+					<h1 id = "status"></h1>
+			</form>
+			
+			<div id="back"><button class="button button1" onclick="onBack()">Back</button></div>
+	</div>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+		<script>
+			
+			
+			var select = document.getElementById("selectDistrict");
+			function func() { 
+				var aadharnumber =$("#aadhar").val();
+				var id = $("#voterid").val();
+    			var hash = id.concat(aadharnumber); 
+    			console.log(hash)
+    			//document.write(hash);     
+				const district = select.options[select.selectedIndex].value
+				const json = {}
+				json["hash"] = hash
+				json["district"] = district
+				const jsonString = JSON.stringify(json);
+				console.log(jsonString)
+				const xhr = new XMLHttpRequest();
+				xhr.open("POST",  "http://134.209.146.188:3000/voters",true);
+				xhr.setRequestHeader("Content-Type", "application/json");
+				xhr.send(jsonString);
+				xhr.onreadystatechange = function () {
+    				if (xhr.readyState === 4 && xhr.status === 200) {
+	        		var status = document.getElementById("status");
+	        		status.innerHTML = "Successfully registerd voter!!"
+	        		console.log("voter added")
+    				}
+				};
+				} 				
+
+		
+		
+
+
+			function onBack(){
+				window.open("../home/home.html","_self")
+			}
+		</script>
+	</body>
+</html>

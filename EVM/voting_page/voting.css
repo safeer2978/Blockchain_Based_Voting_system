@@ -1,0 +1,85 @@
+body
+{
+	background-color: #D6D6D6;
+}
+h1
+{
+	padding-top: 50px;
+	font-size: 60px;
+	font-family: Times New Roman;
+	font-style: normal;
+	text-align: center;
+}
+h2
+{
+	font-family: Times New Roman;
+	font-size: 35px;
+	text-align: left;
+	padding-left: 350px;
+}
+h4
+{
+	top: 200px;
+	font-family: Times New Roman;
+	font-size: 40px;
+	padding-left: 350px;
+}
+table,td,th
+{
+	align-self: center;
+	border: 1px solid black;
+	text-align: left;
+}
+table
+{
+	align-content: center;
+	border-collapse: collapse;
+	width:70%;
+}
+th
+{
+	padding: 15px;
+	font-size: 30px;
+	font-family: Times New Roman;
+	font-style: bold;
+}
+td
+{
+	padding: 15px;
+	font-family: Times New Roman;
+	font-size: 25px;
+	font-style: normal;
+}
+#candidate_input
+{
+	font-family: Times New Roman;
+	font-size: 35px;
+	padding-left: 350px;
+}
+input[type="text"]
+{
+	text-align: center;
+	height: 50px;
+	width: 100px;
+	padding: 15px;
+	font-family: Times New Roman;
+	font-size: 25px;
+}
+
+button
+{
+
+	font-family: Bookman Old Style;
+	font-size: 40px;
+	color:white;
+	width: 243px;
+	height: 69px;
+	-ms-border-radius: 30px;
+	-o-border-radius: 30px;
+	-moz-border-radius: 30px;
+	-webkit-border-radius: 30px;
+	border-radius: 30px;
+	border: 1px solid #707070;
+	background:rgba(61,158,116,255);
+	cursor: pointer;
+}

@@ -6,9 +6,9 @@
 <script src="./node_modules/web3/dist/web3.min.js"></script>
 
 <body class="container">
-  <a href="">Return to home</a>
+  <button onclick="onBack()">Return to home</button>
   <div><h1>Monitor Election</h1> 
-    <div><h4>Select District: </h4><select id="selectDistrict" onchange="onSelect(this)"></select></div>
+    <div><h4>Select District: </h4><select id="selectDistrict" onchange="onSelect(this)"> </select><button onclick="getCandidateData()"class="btn btn-primary"style="height:25px;width:80px">refresh</button></div>
   </div>
   <div class="table-responsive">
     <table class="table table-bordered" id = "table">
@@ -163,6 +163,10 @@
           }
   
     }   
+
+    function onBack(){
+      window.open("../home/home.html","_self")
+    }
   </script>
 
 

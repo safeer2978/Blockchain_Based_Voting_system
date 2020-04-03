@@ -1,0 +1,124 @@
+<!-- 
+/*
+ *	This content is generated from the PSD File Info.
+ *	(Alt+Shift+Ctrl+I).
+ *
+ *	@desc 		
+ *	@file 		first_page
+ *	@date 		0
+ *	@title 		First Page
+ *	@author 	
+ *	@keywords 	
+ *	@generator 	Export Kit v1.2.9.xd
+ *
+*/
+ -->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" >
+	<head>
+		<meta http-equiv="content-type" content="text/html" charset="utf-8" />
+		<title>Second Page</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="" >
+		<link rel="StyleSheet" href="second_page__second_draft_.css" />
+		<script src="https://secure.exportkit.com/cdn/js/ek_googlefonts.js"></script>
+		<!-- Add your custom HEAD content here -->
+
+	</head>
+	<body>
+		<div id="content-container" >
+
+
+			<div id="page_second_page__second_draft__ek1"  >
+				<div id="_bg__second_page__second_draft__ek2"  ></div>
+				<img src="skins/_2nd_screen.png" id="_2nd_screen" />
+				<div id="scan_your_finger_now__ek1" >
+					Scan Your Finger Now.
+				</div>
+				<div id="enter_code_" >
+					Enter Code:
+				</div>
+				<form>
+					<div id="code_input_box"><input type="text" id = "aadhar"></div>
+					<div id="group_20"  ><button  onclick="auth()" type="button">Confirm</button>
+
+				</div>
+				</form>
+				
+
+				
+				<div id="_____________________________ek2" >
+					<br/><br/><span class="char">%E0%A4%85%E0%A4%AA%E0%A4%A8%E0%A5%80 </span> <span class="char">%E0%A4%89%E0%A4%82%E0%A4%97%E0%A4%B2%E0%A5%80 </span> <span class="char">%E0%A4%85%E0%A4%AC </span> <span class="char">%E0%A4%B8%E0%A5%8D%E0%A4%95%E0%A5%88%E0%A4%A8 </span> <span class="char">%E0%A4%95%E0%A4%B0%E0%A5%87%E0%A4%82%E0%A5%A4</span>
+				</div>
+				<div id="_________________________" >
+					<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><span class="char">%E0%A4%95%E0%A5%8B%E0%A4%A1 </span> <span class="char">%E0%A4%A6%E0%A4%B0%E0%A5%8D%E0%A4%9C </span> <span class="char">%E0%A4%95%E0%A4%B0%E0%A5%87%E0%A4%82:</span>:
+				</div>
+
+			</div>
+
+
+
+
+			<div id="group_1"  >
+				<div id="rectangle_1"  ></div>
+				<div id="rectangle_2"  ></div>
+				<div id="rectangle_3"  ></div>
+				<div id="rectangle_4"  ></div>
+				<div id="rectangle_5"  ></div>
+
+			</div>
+
+		</div><script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+		<script type="text/javascript"> var specialChars = document.querySelectorAll("span.char"); for(var c=0; c<specialChars.length; c++){ specialChars[c].innerHTML = decodeURIComponent(specialChars[c].innerHTML); }
+
+
+		function findGetParameter(parameterName) {
+    var result = null,
+        tmp = [];
+    location.search
+        .substr(1)
+        .split("&")
+        .forEach(function (item) {
+          tmp = item.split("=");
+          if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
+        });
+    return result;
+	}
+	const voterid = findGetParameter("voterid")
+	console.log(voterid)
+
+
+			function auth() { 
+				var aadharnumber =$("#aadhar").val();
+    			var hash = voterid.concat(aadharnumber); 
+    			console.log(hash)
+    			//document.write(hash);     
+				const json = {}
+				json["hash"] = hash
+				const jsonString = JSON.stringify(json);
+				console.log(jsonString)
+				const xhr = new XMLHttpRequest();
+				xhr.open("POST",  "http://134.209.146.188:3000/getvoters",true);
+				xhr.setRequestHeader("Content-Type", "application/json");
+				xhr.send(jsonString);
+				xhr.onreadystatechange = function () {
+    				if (xhr.readyState === 4 && xhr.status === 200) {
+	        		var status = document.getElementById("status");
+	        		//status.innerHTML = "Successfully registerd voter!!"
+	        		console.log("voter is registerd")
+	        		var json = JSON.parse(xhr.responseText);
+        				console.log(json.district);
+        				if(json.vote==0)
+	        				{window.open("../voting_page/voting.html?hash="+hash+"&district="+json.district,"_self")}
+	        			else
+	        				window.open("../invalid/invalid_screen.html?reason=invalid","_self")
+    				}else{
+    					window.open("../invalid/invalid_screen.html?reason=invalid","_self")
+    				}
+    				//window.open("../invalid/invalid_screen.html?reason=invalid","_self")
+				};
+				return false
+				} 
+	</script>
+	</body>
+</html>

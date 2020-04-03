@@ -21,28 +21,11 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="description" content="" >
 		<link rel="StyleSheet" href="first_page.css" />
-		
+		<script src="https://secure.exportkit.com/cdn/js/ek_googlefonts.js"></script>
 		<!-- Add your custom HEAD content here -->
 
 	</head>
 	<body>
-		<style>
-			input[type=text]{
-    	width:100%;
-    	border:4px solid #aaa;
-    	border-radius:8px;
-    margin:32px 0;
-    outline:none;
-    padding:8px;
-    box-sizing:border-box;
-    transition:.3s;
-  }
-  
-  input[type=text]:focus{
-    border-color:dodgerBlue;
-    box-shadow:0 0 8px 0 dodgerBlue;
-  }
-		</style>
 		<div id="content-container" >
 			<div id="page_first_page_ek1"  >
 				<div id="_bg__first_page_ek2"  ></div>
@@ -52,18 +35,12 @@
 				<div id="enter_your_card_number_" >
 					Enter Your Card Number:
 				</div>
-				
-				<div id="card_number_input"  >
-				<input type="text" size =25>
-				</div>
+				<form>
+					<div id="card_number_input"><input type="text" id = "voterid"></div>
+				</form>
 
 				<div id="group_19"  >
-
-					<div id="confirm_box"  ></div>
-					<div id="confirm"> 
-					Confirm
-					
-					</div>
+					<button type="Submit" onclick="onNext()">Confirm</button>
 
 				</div>
 				<div id="____________________________" >
@@ -85,30 +62,17 @@
 				<div id="rectangle_4"  ></div>
 				<div id="rectangle_5"  ></div>
 
-				
-		<form>
-         Card Number:<br> <input type="text" name="CardNumber">
-    
-         
-      </form>
-
 			</div>
 
 		</div>
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 		<script>var specialChars = document.querySelectorAll("span.char"); for(var c=0; c<specialChars.length; c++){ specialChars[c].innerHTML = decodeURIComponent(specialChars[c].innerHTML); }
 
-		const toSend = {
-				hash :  "kdfbdkfbhdakf",
-				district:"lavale"
-			};
-
-		const jsonString = JSON.stringify(toSend);
-		const xhr = new XMLHttpRequest();
-
-		xhr.open("POST",  "http://134.209.146.188:3000/voters");
-			xhr.setRequestHeader("Content-Type", "application/json");
-			xhr.send(jsonString);
-			
+	function onNext(){
+				var voterid =$("#voterid").val();
+				console.log(voterid)
+				window.open("../second_page/second_page.html?voterid="+voterid,"_self")
+			}
 	</script>
 	</body>
 </html>

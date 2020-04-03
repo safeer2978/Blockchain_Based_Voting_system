@@ -1,0 +1,99 @@
+<!-- 
+/*
+ *	This content is generated from the PSD File Info.
+ *	(Alt+Shift+Ctrl+I).
+ *
+ *	@desc 		
+ *	@file 		voter
+ *	@date 		0
+ *	@title 		Voter
+ *	@author 	
+ *	@keywords 	
+ *	@generator 	Export Kit v1.2.9.xd
+ *
+*/
+ -->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" >
+	<head>
+		<meta http-equiv="content-type" content="text/html" charset="utf-8" />
+		<title>voter</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="" >
+		<link rel="StyleSheet" href="voter.css" />
+		<script src="https://secure.exportkit.com/cdn/js/ek_googlefonts.js"></script>
+		<!-- Add your custom HEAD content here -->
+
+	</head>
+	<body>
+		<div id="content-container" >
+			<div id="_bg__voter"  ></div>
+			<div id="add_voter_" >
+				Add Voter :
+			</div>
+			<div id="enter_voter_id_" >
+				Enter candidate name :
+			</div>
+			<div id="enter_aadhar_number_" >
+				Enter candidate party :
+			</div>
+			<div id="District">
+				Enter District :
+			</div>
+			<form>
+				<div id="districtbox">
+					<select>
+						<option value="Select1">Select District</option>
+						<option value="Kolhapur">Kolhapur</option>
+						<option value="Mumbai">Mumbai</option>
+						<option value="Nashik">Nashik</option>
+						<option value="Nagpur">Nagpur</option>
+						<option value="Pune">Pune</option>
+						<option value="Raigad">Raigad</option>
+						<option value="Ratnagiri">Ratnagiri</option>
+						<option value="Satara">Satara</option>
+						<option value="Solapur">Solapur</option>
+						<option value="Thane">Thane</option>
+					</select>
+				</div>
+				<div id="voteridbox"><input type="text"></div>
+				<div id="aadharnumber"><input type="text"></div>
+
+				<div id="group_3"  ><button class="button button2">Confirm</button>
+					</div>
+			</form>
+			
+			<div id="back"><button class="button button1">Back</button></div>
+	</div>
+
+		<script>
+			
+			
+			
+			function func() { 
+  
+    // Original string 
+   			 	var str = voteridbox; 
+  
+    // Joining the strings together 
+    			var value = str.concat(aadharnumber); 
+    			document.write(value);     
+				} 
+				
+			
+			var input1 = document.getElementById("districtbox");
+				const toSend = {
+						"hash" : value,
+						"district":input1
+				};
+
+
+		const jsonString = JSON.stringify(toSend);
+		const xhr = new XMLHttpRequest();
+
+		xhr.open("POST",  "http://134.209.146.188:3000/voters");
+			xhr.setRequestHeader("Content-Type", "application/json");
+			xhr.send(jsonString);
+		</script>
+	</body>
+</html>

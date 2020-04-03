@@ -1,0 +1,237 @@
+/*
+	@name home
+*/
+/* Only edit this if you know what you are doing! */
+body { margin: 0px; padding: 0px; font-family:"Arial"; /*overflow-x:hidden;*/ }
+
+/* Only edit this if you know what you are doing! */
+img { position: absolute; display: block; margin: 0px; border: none; padding: 0px; }
+
+/* Only edit this if you know what you are doing! */
+div { position: absolute; }
+
+#content-container { display: table; position: relative; width: 1920px; height: 1080px; margin-left: auto; margin-right: auto;  }
+
+#_bg__home {
+	top: 0px;
+	left: 0px;
+	width: 1920px;
+	height: 1080px;
+	background:rgba(214,214,214,255);
+}
+
+
+#rectangle_6 {
+	top: 90px;
+	left: 105px;
+	width: 827px;
+	height: 175px;
+	-ms-border-radius: 61px;
+	-o-border-radius: 61px;
+	-moz-border-radius: 61px;
+	-webkit-border-radius: 61px;
+	border-radius: 61px;
+	border: 1px solid #707070;
+	background:rgba(255,255,255,255);
+}
+
+
+#rectangle_7 {
+	top: 331px;
+	left: 105px;
+	width: 827px;
+	height: 175px;
+	-ms-border-radius: 61px;
+	-o-border-radius: 61px;
+	-moz-border-radius: 61px;
+	-webkit-border-radius: 61px;
+	border-radius: 61px;
+	border: 1px solid #707070;
+	background:rgba(255,255,255,255);
+}
+
+
+#rectangle_8 {
+	top: 572px;
+	left: 105px;
+	width: 827px;
+	height: 175px;
+	-ms-border-radius: 61px;
+	-o-border-radius: 61px;
+	-moz-border-radius: 61px;
+	-webkit-border-radius: 61px;
+	border-radius: 61px;
+	border: 1px solid #707070;
+	background:rgba(255,255,255,255);
+}
+
+
+#rectangle_9 {
+	top: 813px;
+	left: 105px;
+	width: 827px;
+	height: 175px;
+	-ms-border-radius: 61px;
+	-o-border-radius: 61px;
+	-moz-border-radius: 61px;
+	-webkit-border-radius: 61px;
+	border-radius: 61px;
+	border: 1px solid #707070;
+	background:rgba(255,255,255,255);
+}
+
+
+#logout {
+	top: 60px;
+	left: 1610px;
+	width: 316px;
+	height: 125px;
+	overflow: hidden;
+	font-family: Bookman Old Style;
+	font-size: 60px;
+	text-align: left;
+	line-height: 60px;
+	color:#2a3439;
+}
+
+
+#ellipse_1 {
+	top: 252px;
+	left: 1303px;
+	width: 333px;
+	height: 333px;
+	-ms-border-radius: 167.5px / 167.5px;
+	-o-border-radius: 167.5px / 167.5px;
+	-moz-border-radius: 167.5px / 167.5px;
+	-webkit-border-radius: 167.5px / 167.5px;
+	border-radius: 167.5px / 167.5px;
+	border: 1px solid #707070;
+	background:rgba(255,255,255,255);
+}
+
+
+#line_1 {
+	top: 13.5px;
+	left: 1065px;
+	width: 1px;
+	height: 1080px;
+}
+
+
+#user_name_user_id_________ {
+	top: 656.5px;
+	left: 1220px;
+	width: 598px;
+	height: 342.5px;
+	overflow: hidden;
+	font-family: Bookman Old Style;
+	font-size: 45px;
+	text-align: left;
+	line-height: 45px;
+	color:#2a3439;
+}
+
+
+#user_photo {
+	top: 360px;
+	left: 1398px;
+	width: 240px;
+	height: 151.5px;
+	overflow: hidden;
+	font-family: Bookman Old Style;
+	font-size: 45px;
+	text-align: left;
+	line-height: 45px;
+	color:#2a3439;
+}
+
+
+#add_voter {
+	top: 16px;
+	left: 211px;
+	width: 520px;
+	height: 108px;
+	overflow: hidden;
+	font-family: Bookman Old Style;
+	font-size: 60px;
+	text-align: left;
+	line-height: 60px;
+	color:#2a3439;
+}
+
+
+#add_candidate {
+	top: 367px;
+	left: 211px;
+	width: 520px;
+	height: 108px;
+	overflow: hidden;
+	font-family: Bookman Old Style;
+	font-size: 60px;
+	text-align: left;
+	line-height: 60px;
+	color:#2a3439;
+}
+
+
+#start_end_election {
+	top: 608px;
+	left: 214px;
+	width: 593px;
+	height: 108px;
+	overflow: hidden;
+	font-family: Bookman Old Style;
+	font-size: 60px;
+	text-align: left;
+	line-height: 60px;
+	color:#2a3439;
+}
+
+
+#election_monitoring {
+	top: 842px;
+	left: 211px;
+	width: 617px;
+	height: 157px;
+	overflow: hidden;
+	font-family: Bookman Old Style;
+	font-size: 60px;
+	text-align: left;
+	line-height: 60px;
+	color:#2a3439;
+}
+
+.button
+{
+	width: 827px;
+	height: 175px;
+	border-radius: 61px;
+	border: none;
+	background-color: white;
+	font-family: Bookman Old Style;
+	font-size: 60px;
+	text-align: left;
+	padding: 75px;
+	cursor: pointer;
+	display: inline-block;
+}
+.button1
+{
+	border: none;
+	background-color: inherit;
+	padding:14px 28px;
+	font-size: 60px;
+	cursor: pointer;
+	display: inline-block;
+	top: 71px;
+	left: 1620px;
+	width: 316px;
+	height: 83px;
+	border: none;
+	color: #2A3439;
+	font-family: Bookman Old Style;
+  font-size: 45px;
+}
+
+
+/* Add your custom CSS here */

@@ -1,0 +1,104 @@
+<!-- 
+/*
+ *	This content is generated from the PSD File Info.
+ *	(Alt+Shift+Ctrl+I).
+ *
+ *	@desc 		
+ *	@file 		candidate
+ *	@date 		0
+ *	@title 		Candidate
+ *	@author 	
+ *	@keywords 	
+ *	@generator 	Export Kit v1.2.9.xd
+ *
+*/
+ -->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" >
+	<head>
+		<meta http-equiv="content-type" content="text/html" charset="utf-8" />
+		<title>candidate</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="" >
+		<link rel="StyleSheet" href="candidate.css" />
+		<script src="https://secure.exportkit.com/cdn/js/ek_googlefonts.js"></script>
+		<!-- Add your custom HEAD content here -->
+
+	</head>
+	<body>
+		<div id="content-container" >
+			<div id="_bg__candidate"  ></div>
+			<div id="add_candidate_" >
+				Add Candidate:
+			</div>
+			<div id = "status" size="200px">asas</div>
+			<div id="name_" >
+				Name:
+			</div>
+			<div id="party_name_" >
+				Party Name:
+			</div>
+
+			<div id="district_name_" >
+				District Name:
+			</div>
+			<form>
+				<div id="namebox"  ><input id="name" type="text"></div>
+				<div id="partynamebox"  ><input id="party" type="text"></div>
+				<div id="districtnamebox"  ><select id ="selectDistrict">
+						<option value="Select1">Select District</option>
+						<option value="Kolhapur">Kolhapur</option>
+						<option value="Mumbai">Mumbai</option>
+						<option value="Nashik">Nashik</option>
+						<option value="Nagpur">Nagpur</option>
+						<option value="Pune">Pune</option>
+						<option value="Raigad">Raigad</option>
+						<option value="Ratnagiri">Ratnagiri</option>
+						<option value="Satara">Satara</option>
+						<option value="Solapur">Solapur</option>
+						<option value="Thane">Thane</option>
+					</select></div>
+
+			</form>
+			
+			<div id="back" ><button class="button button1" onclick="onBack()">Back</button>
+				
+			</div>
+
+			<div id="group_4"  ><button class="button button2" onclick="submit()">Confirm</button>
+				
+
+			</div>
+
+		</div>
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+		<script type="text/javascript">
+				var select = document.getElementById("selectDistrict");
+				jsonToPush = {}
+				function submit(){
+				jsonToPush["name"] = $("#name").val();
+				jsonToPush["party"] = $("#party").val();
+				jsonToPush["district"] = select.options[select.selectedIndex].value
+				console.log(JSON.stringify(jsonToPush))
+				let xhr = new XMLHttpRequest(); 
+    			let url_post = "http://134.209.146.188:3000/customers";
+    			xhr.open("POST", url_post, true);
+   		 		xhr.setRequestHeader("Content-Type", "application/json");
+   		 		xhr.send(JSON.stringify(jsonToPush)); 	
+   		 		xhr.onreadystatechange = function () {
+    				if (xhr.readyState === 4 && xhr.status === 200) {
+	        		var status = document.getElementById("status");
+	        		status.innerHTML = "Successfully added Candidate!!"
+	        		console.log("candidate added")
+    				}
+				};
+  				
+			}
+
+			function onBack(){
+				window.open("../home/home.html","_self")
+			}
+
+		</script>
+	</body>
+</html>

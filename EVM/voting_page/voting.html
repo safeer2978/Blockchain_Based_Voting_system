@@ -1,15 +1,16 @@
 <html>
 <head>
   <title>Candidates</title>
-  <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+  <link href="voting.css" rel='stylesheet' type='text/css'>
 </head>
 <script src="./node_modules/web3/dist/web3.min.js"></script>
 
 <body class="container">
   <h1>Main Election Page</h1>
-  <h4 id="district">District</h4>
+  <h4 id="district">District: Mumbai</h4>
+  
   <div class="table-responsive">
-    <table class="table table-bordered" id = "table">
+    <table class="table table-bordered" id = "table" align="center">
       <thead>
         <tr>
           <th>Index</th>
@@ -24,18 +25,18 @@
   </div>
 
     <div id="choose_candidate_">
-      Choose Candidate:
-    
-      <div ><input id="index" type="text" style="height:40px;width:40px"><button id="submit" type="submit" onclick="submitVote()" class="btn btn-primary"style="height:50px;width:100px">Vote</button></div>
+     
+    <br><br>
+      <div id="candidate_input"> Choose Candidate:   <input id="index" type="text"><br><br><button id="submit" type="submit" onclick="submitVote()" class="btn btn-primary">Vote</button></div>
     </div>
-    <div id="message_div"><h1 id="message">Please Wait!!</h1><h3 id="redirecting"></h3></div>
+    <div id="message_div"><h2 id="message">Please Wait!!</h2><h3 id="redirecting"></h3></div>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
   <script type="text/javascript">
     
 
     let web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
     
-    const district = "Mumbai"
+    const district = findGetParameter("district")
     
     let districtAddress = '0x282004947021feE2fCb51d25f785452572Eff347'
     
@@ -54,7 +55,7 @@
     console.log(district_contract) /// Use this JSON array to load on to the smart contract. 
     districtAddress=district_contract.address;
     console.log(districtAddress)
-    getCandidateData()
+    getCandidateData()  
     }
 
     
@@ -82,6 +83,15 @@
     const candidateOptions = document.getElementById("candidate-options");
     const voteForm = document.getElementById("vote_form");
     
+    function handleVote(evt) {
+      const candidate = new FormData(evt.target).get("candidate");
+      BallotContract.vote(candidate, {from: web3.eth.accounts[0]}, function() {
+        const votes = BallotContract.getVoteCount.call(candidate);
+    
+        // Updates the vote element.
+        document.getElementById("vote-" + candidate).innerText = votes;
+      });
+    }
     var len=0;
     var candidateNames=[]
     var candidatePartys=[]
@@ -142,7 +152,7 @@ function stateChange() {
         console.log(p)
         p-=1;
       }else{
-        window.open("google.com","_self")
+        window.open("../first_page/first_page.html","_self")
       }
     }, 1000);
 
@@ -162,6 +172,7 @@ const submitVote = async() =>{
       const vote = await BallotContract.methods.vote(index).send({from : account, gas: 6000000})
       console.log(vote)
       message.innerHTML = "Vote Successful";
+      auth()
       
       stateChange()
       //const voteCount = await BallotContract.methods.getVoteCount(index).call({from : account, gas: 6000000})
@@ -173,9 +184,47 @@ const submitVote = async() =>{
     //console.log(index)
 }
 
+function findGetParameter(parameterName) {
+    var result = null,
+        tmp = [];
+    location.search
+        .substr(1)
+        .split("&")
+        .forEach(function (item) {
+          tmp = item.split("=");
+          if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
+        });
+    return result;
+  }
+const hash= findGetParameter("hash")
+  console.log(hash)
 
+
+function auth() { 
+          console.log(hash)
+          //document.write(hash);     
+        const json = {}
+        json["hash"] = hash
+        const jsonString = JSON.stringify(json);
+        console.log(jsonString)
+        const xhr = new XMLHttpRequest();
+        xhr.open("POST",  "http://134.209.146.188:3000/voteauth",true);
+        xhr.setRequestHeader("Content-Type", "application/json");
+        xhr.send(jsonString);
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+              var status = document.getElementById("status");
+              //status.innerHTML = "Successfully registerd voter!!"
+              console.log("voter is registerd")
+              var json = JSON.parse(xhr.responseText);
+                console.log(json);
+                
+        };
+        return false
+        }
+      } 
   
-  
+
   </script>
 
 

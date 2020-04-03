@@ -1,0 +1,252 @@
+/*
+ *	This content is generated from the PSD File Info.
+ *	(Alt+Shift+Ctrl+I).
+ *
+ *	@desc 		
+ *	@file 		first_page
+ *	@date 		0
+ *	@title 		First Page
+ *	@author 	
+ *	@keywords 	
+ *	@generator 	Export Kit v1.2.9.xd
+ *
+*/
+
+/* Only edit this if you know what you are doing! */
+body { margin: 0px; padding: 0px; font-family:"Arial"; /*overflow-x:hidden;*/ }
+
+/* Only edit this if you know what you are doing! */
+img { position: absolute; display: block; margin: 0px; border: none; padding: 0px; }
+
+/* Only edit this if you know what you are doing! */
+div { position: absolute; }
+
+#content-container { display: block; position: relative;  margin-left: auto; margin-right: auto;  }
+
+#content-container > div{ position: relative; top:inherit; }
+
+
+#page_second_page__second_draft__ek1 {
+	top: 0px;
+	left: 0px;
+	width: 1920px;
+	height: 1080px;
+}
+
+#_bg__second_page__second_draft__ek2 {
+	top: 0px;
+	left: 0px;
+	width: 1920px;
+	height: 1080px;
+	background:rgba(214,214,214,255);
+}
+#_2nd_screen {
+	top: 177px;
+	left: 1294px;
+	width: 532px;
+	height: 786px;
+}
+#scan_your_finger_now__ek1 {
+	top: 177px;
+	left: 146px;
+	width: 1030px;
+	height: 390px;
+	overflow: hidden;
+	font-family: Bookman Old Style;
+	font-size: 120px;
+	text-align: center;
+	line-height: 120px;
+	color:#2a3439;
+}
+#enter_code_ {
+	top: 685px;
+	left: 63px;
+	width: 540px;
+	height: 121px;
+	overflow: hidden;
+	font-family: Bookman Old Style;
+	font-size: 60px;
+	text-align: center;
+	line-height: 60px;
+	color:#2a3439;
+}
+#code_input_box {
+	top: 615px;
+	left: 580px;
+	width: 614px;
+	height: 105px;
+	-ms-border-radius: 39px;
+	-o-border-radius: 39px;
+	-moz-border-radius: 39px;
+	-webkit-border-radius: 39px;
+	border-radius: 39px;
+	border: 1px solid #707070;
+	background:rgba(255,255,255,255);
+}
+input[type=text]
+{
+	top: 600px;
+	left: 580px;
+	width: 614px;
+	height: 105px;
+	font-family: Bookman Old Style;
+	font-size: 60px;
+	text-align: 60px;
+	padding: 16px;
+	-ms-border-radius: 39px;
+	-o-border-radius: 39px;
+	-moz-border-radius: 39px;
+	-webkit-border-radius: 39px;
+	border-radius: 39px;
+	border: 3px solid #707070;
+	background:rgba(255,255,255,255);
+}
+#group_20 {
+	top: 856px;
+	left: 438px;
+	width: 450px;
+	height: 107px;
+}
+button
+{
+	font-family: Bookman Old Style;
+	font-size: 60px;
+	text-align: 60px;
+  background-color: #707070;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  -ms-border-radius: 53px;
+	-o-border-radius: 53px;
+	-moz-border-radius: 53px;
+	-webkit-border-radius: 53px;
+	border-radius: 53px;
+	border: 1px solid #707070;
+	background:rgba(61,158,116,255);
+
+}
+#rectangle_7 {
+	top: 0px;
+	left: 0px;
+	width: 448px;
+	height: 105px;
+	-ms-border-radius: 48px;
+	-o-border-radius: 48px;
+	-moz-border-radius: 48px;
+	-webkit-border-radius: 48px;
+	border-radius: 48px;
+	border: 1px solid #707070;
+	background:rgba(42,52,57,255);
+}
+#confirm_ek1 {
+	top: 19px;
+	left: 93px;
+	width: 244px;
+	height: 125px;
+	overflow: hidden;
+	font-family: Bookman Old Style;
+	font-size: 60px;
+	text-align: center;
+	line-height: 60px;
+	color:#ffffff;
+}
+#_____________________________ek2 {
+	top: 279px;
+	left: 238px;
+	width: 1084px;
+	height: 352.5px;
+	overflow: hidden;
+	font-family: Bookman Old Style;
+	font-size: 75px;
+	text-align: left;
+	line-height: 75px;
+	color:#707070;
+}
+#_________________________ {
+	top: 147px;
+	left: 187px;
+	width: 343px;
+	height: 1034px;
+	overflow: hidden;
+	font-family: Bookman Old Style;
+	font-size: 50px;
+	text-align: left;
+	line-height: 50px;
+	color:#707070;
+}
+
+
+
+#group_1 {
+	top: -3280px;
+	left: -1890px;
+	width: 1257px;
+	height: 794px;
+}
+
+#rectangle_1 {
+	top: 0px;
+	left: 0px;
+	width: 1255px;
+	height: 792px;
+	border: 1px solid #707070;
+	background:rgba(41,41,41,255);
+}
+#rectangle_2 {
+	top: 86px;
+	left: 74px;
+	width: 166px;
+	height: 244px;
+	-ms-border-radius: 16px;
+	-o-border-radius: 16px;
+	-moz-border-radius: 16px;
+	-webkit-border-radius: 16px;
+	border-radius: 16px;
+	border: 1px solid #707070;
+	background:rgba(214,214,214,255);
+}
+#rectangle_3 {
+	top: 86px;
+	left: 306px;
+	width: 166px;
+	height: 244px;
+	-ms-border-radius: 16px;
+	-o-border-radius: 16px;
+	-moz-border-radius: 16px;
+	-webkit-border-radius: 16px;
+	border-radius: 16px;
+	border: 1px solid #707070;
+	background:rgba(196,2,51,255);
+}
+#rectangle_4 {
+	top: 86px;
+	left: 545px;
+	width: 166px;
+	height: 244px;
+	-ms-border-radius: 16px;
+	-o-border-radius: 16px;
+	-moz-border-radius: 16px;
+	-webkit-border-radius: 16px;
+	border-radius: 16px;
+	border: 1px solid #707070;
+	background:rgba(61,158,116,255);
+}
+#rectangle_5 {
+	top: 86px;
+	left: 784px;
+	width: 166px;
+	height: 244px;
+	-ms-border-radius: 16px;
+	-o-border-radius: 16px;
+	-moz-border-radius: 16px;
+	-webkit-border-radius: 16px;
+	border-radius: 16px;
+	border: 1px solid #707070;
+	background:rgba(42,52,57,255);
+}
+
+/* Add your custom CSS here */
+
