@@ -16,7 +16,7 @@ This project is inspired by [this paper](https://skemman.is/bitstream/1946/31161
 At a very high level, a simple voting system comprises of an organising authority, a voting machine and a vote.
 In case of our system, we add an etherium based blockchain, which establishes the network between the three mentioned entities.
 
-<img src="abstract.png" width="40%">
+![network_image](https://github.com/safeer2978/Blockchain_Based_Voting_system/blob/master/Diagrams/abstract.png)
 
 Ultimatley our project converges to a Decentralised Web application(). The components of this application are:-
 
@@ -24,7 +24,7 @@ Ultimatley our project converges to a Decentralised Web application(). The compo
 2. Front-end Software for Election Commision (ECI) and for Voting Machine
 4. Voter Authentication Service
 
-![architecture image](https://github.com/safeer2978/Blockchain_Based_Voting_system/blob/master/Diagrams/architecture.png=250x250)
+![architecture image](https://github.com/safeer2978/Blockchain_Based_Voting_system/blob/master/Diagrams/architecture.png)
 ### Smart Contracts
 
  The system includes two Smart contract:
@@ -66,24 +66,12 @@ The blockchain is established using the geth program. Geth is the go-based imple
 
 ### Voter Interface
 
-<<<<<<< HEAD
-![alt text](https://github.com/safeer2978/Blockchain_Based_Voting_system/blob/master/Diagrams/1.jpg=250x250)
-![alt text](https://github.com/safeer2978/Blockchain_Based_Voting_system/blob/master/Diagrams/2.jpg=250x250)
-![alt text](https://github.com/safeer2978/Blockchain_Based_Voting_system/blob/master/Diagrams/3.jpg=250x250)
+![alt text](https://github.com/safeer2978/Blockchain_Based_Voting_system/blob/master/Diagrams/1.jpg)
+![alt text](https://github.com/safeer2978/Blockchain_Based_Voting_system/blob/master/Diagrams/2.jpg)
+![alt text](https://github.com/safeer2978/Blockchain_Based_Voting_system/blob/master/Diagrams/3.jpg)
 
 ### Election Commision Interface
-![alt text](https://github.com/safeer2978/Blockchain_Based_Voting_system/blob/master/Diagrams/11.jpg=250x250)
-![alt text](https://github.com/safeer2978/Blockchain_Based_Voting_system/blob/master/Diagrams/12.jpg=250x250)
-![alt text](https://github.com/safeer2978/Blockchain_Based_Voting_system/blob/master/Diagrams/13.jpg=250x250)
-![alt text](https://github.com/safeer2978/Blockchain_Based_Voting_system/blob/master/Diagrams/14.jpg=250x250)
-=======
-![alt text](https://github.com/safeer2978/Blockchain_Based_Voting_system/blob/master/Diagrams/1.png)
-![alt text](https://github.com/safeer2978/Blockchain_Based_Voting_system/blob/master/Diagrams/2.png)
-![alt text](https://github.com/safeer2978/Blockchain_Based_Voting_system/blob/master/Diagrams/3.png)
-
-### Election Commision Interface
-![alt text](https://github.com/safeer2978/Blockchain_Based_Voting_system/blob/master/Diagrams/11.png)
-![alt text](https://github.com/safeer2978/Blockchain_Based_Voting_system/blob/master/Diagrams/12.png)
-![alt text](https://github.com/safeer2978/Blockchain_Based_Voting_system/blob/master/Diagrams/13.png)
-![alt text](https://github.com/safeer2978/Blockchain_Based_Voting_system/blob/master/Diagrams/14.png)
->>>>>>> parent of b6512cf... Update README.md
+![alt text](https://github.com/safeer2978/Blockchain_Based_Voting_system/blob/master/Diagrams/11.jpg)
+![alt text](https://github.com/safeer2978/Blockchain_Based_Voting_system/blob/master/Diagrams/12.jpg)
+![alt text](https://github.com/safeer2978/Blockchain_Based_Voting_system/blob/master/Diagrams/13.jpg)
+![alt text](https://github.com/safeer2978/Blockchain_Based_Voting_system/blob/master/Diagrams/14.jpg)
