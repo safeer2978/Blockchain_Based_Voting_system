@@ -11,6 +11,14 @@ Our implementation consists of a web interface to allow user to interact with th
 
 This project is inspired by [this paper](https://skemman.is/bitstream/1946/31161/1/Research-Paper-BBEVS.pdf). 
 
+## Tech Stack
+* Node.js as the backend runtime environment
+* Express as the web application framework
+* MySQL as the relational database management system
+* Async for handling asynchronous operations
+* Body-parser for parsing incoming request bodies in middleware
+
+
 ## System Design
 
 At a very high level, a simple voting system comprises of an organising authority, a voting machine and a vote.
